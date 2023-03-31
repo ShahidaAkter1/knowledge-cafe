@@ -6,7 +6,10 @@ const SingleCard = (props) => {
   // console.log(props.singleData);
   // console.log(handleReadTime);
 
-
+// handle BookMark
+const handleBookMark = (name) =>{
+  console.log(name);
+}
   
 
     return (
@@ -29,7 +32,7 @@ const SingleCard = (props) => {
          <p> <span>{singleData.readTime}</span> min read</p>
          </div>
          <div>
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 iconBookmark">
+         <svg onClick={()=> handleBookMark({singleData})} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 iconBookmark">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
         </svg>
       </div>
@@ -38,7 +41,8 @@ const SingleCard = (props) => {
       <div className='titlePart'>
       <h1 className='fs-5 fw-bold ms-5 '>{singleData.description}</h1>
       <p className='ms-5'>#beginners    &nbsp; &nbsp; #programming</p>
-      <a onClick={() => handleReadTime(singleData.readTime)} className='ms-5' href="">Mark as read</a>
+    <button className='btnMark' onClick={() => handleReadTime(singleData.readTime)}  href="">Mark as read</button>
+      {/* <a onClick={() => handleReadTime(singleData.readTime)} className='ms-5' href="">Mark as read</a> */}
       </div>
    
            </div>  

@@ -1,9 +1,10 @@
-/* .img-author{
-    height: 50px;
-    width: 50px;
-    border-radius: 200px;
-    margin-left: 100px;
-}
-.author{
+
+ .author{
     margin-left: 20px;
-} */
+}
+.btnMark{
+    background-color: white;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+}
