@@ -12,7 +12,7 @@ const Header = () => {
           <Navbar.Brand className='fs-2 fw-bold' href="#home">Knowledge Cafe</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto fs-5 fw-semibold">
+            <Nav className="ms-auto link-a fs-5 fw-semibold">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Component</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
