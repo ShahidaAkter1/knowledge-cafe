@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SingleCard from '../SingleCard/SingleCard';
 import './Home.css'
 
 const Home = () => {
+
+ 
+    const [loadData, setLoadData] = useState([]);
+
+    useEffect( ()=>{
+        fetch('data.json')
+        .then(res => res.json())
+        .then(data => setLoadData(data))
+    },[])
+
     return (
         <div>
-          <div className="container-fluid cafe-container">
-             {/* {
-                cards.map((card) => <SingleCard ></SingleCard>)
-               }  */}
-            
-              <SingleCard></SingleCard>
+          <div className="cafe-container">
+            {
+                loadData.map(singleData=><SingleCard
+                 singleData={singleData}
+                >
+
+                </SingleCard>)
+
+            }
+          
+           
                
             </div>
         </div>
