@@ -2,8 +2,9 @@ import React from 'react';
 import './SingleCard.css'
 
 const SingleCard = (props) => {
-    const {singleData}= props;
-  console.log(props.singleData);
+    const {singleData,handleReadTime}= props;
+  // console.log(props.singleData);
+  // console.log(handleReadTime);
 
 
   
@@ -37,7 +38,7 @@ const SingleCard = (props) => {
       <div className='titlePart'>
       <h1 className='fs-5 fw-bold ms-5 '>{singleData.description}</h1>
       <p className='ms-5'>#beginners    &nbsp; &nbsp; #programming</p>
-      <a className='ms-5' href="">Mark as read</a>
+      <a onClick={() => handleReadTime(singleData.readTime)} className='ms-5' href="">Mark as read</a>
       </div>
    
            </div>  

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleCard from '../SingleCard/SingleCard';
 import './Home.css'
 
-const Home = () => {
+const Home = ({handleReadTime}) => {
 
  
     const [loadData, setLoadData] = useState([]);
@@ -14,11 +14,13 @@ const Home = () => {
     },[])
 
     return (
-        <div>
+        <>
           <div className="cafe-container">
             {
                 loadData.map(singleData=><SingleCard
+              key={singleData.id}
                  singleData={singleData}
+                 handleReadTime={handleReadTime}
                 >
 
                 </SingleCard>)
@@ -28,7 +30,7 @@ const Home = () => {
            
                
             </div>
-        </div>
+        </>
     );
 };
 
