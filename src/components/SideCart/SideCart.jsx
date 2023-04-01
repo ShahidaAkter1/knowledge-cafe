@@ -46,6 +46,18 @@ const SideCart = (props) => {
     
      
 
+
+//   console.log(props.bookmarked);
+// const len=props.bookmarked.length;
+const len=0;
+
+
+
+
+  
+
+
+
     return (
         <div className='cart'>
 

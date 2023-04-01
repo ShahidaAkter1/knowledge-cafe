@@ -29,6 +29,73 @@ function App() {
       setSpentTime(time);
     }
   }
+  else {
+      localStorage.setItem('SpentTime', time);
+       setSpentTime(time);
+  }
+}
+
+
+
+
+
+
+
+  const getBookmark=  JSON.parse(localStorage.getItem('bookmark'));
+  // console.log(getBookmark);
+  //  getBookmark.map(dataBookmark=>console.log(dataBookmark.description));
+  // const [readTime, setReadTime] =useState("");
+  const [bookmarked,setBookmarked]=useState(getBookmark);
+  useEffect(()=>{
+
+
+
+  } ,[getBookmark])
+
+ 
+// handle BookMark
+const handleBookMark = (description) =>{
+  console.log(description);
+  const previousBookmark= JSON.parse(localStorage.getItem("bookmark"));
+  // console.log(previousBookmark);
+  let bookmark = [];
+  const singleData={description,bookmark: true};
+// console.log(singleData);
+
+if(previousBookmark){
+  // console.log("ache");
+
+  const isSingleDataMarked= previousBookmark.find(single => single.description ==description);
+  // console.log(isSingleDataMarked);
+
+  if(isSingleDataMarked){
+    // alert("already bookmark");
+    toast(" wow already Bookmarked!");
+  }
+  else{
+    bookmark.push(...previousBookmark, singleData);
+    // console.log(bookmark);
+    localStorage.setItem("bookmark", JSON.stringify(bookmark))
+    setBookmarked(bookmark);
+  }
+}
+else{
+  // console.log("nai");
+  bookmark.push(singleData);
+  localStorage.setItem("bookmark", JSON.stringify(bookmark));
+}
+
+  
+}
+
+
+// console.log(bookmarked);
+
+ 
+  
+ 
+
+
 
 
   const getBookmark = JSON.parse(localStorage.getItem('bookmark'));
