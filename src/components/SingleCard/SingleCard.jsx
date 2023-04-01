@@ -7,13 +7,12 @@ const SingleCard = (props) => {
   // console.log(props.singleData);
 
   const {description}=props.singleData;
-  console.log(description);
+  // console.log(description);
   
   // console.log(handleReadTime);
 
 // handle BookMark
-const handleBookMark = (description
-  ) =>{
+const handleBookMark = (description) =>{
     const previousBookmark= JSON.parse(localStorage.getItem("bookmark"));
     // console.log(previousBookmark);
     let bookmark = [];

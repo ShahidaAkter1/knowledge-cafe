@@ -5,3 +5,8 @@
 .bookMark{
 background-color: beige;
 }
+.cart {
+    position: sticky;
+    top: 0;
+   
+  }
