@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import SideCart from './components/SideCart/SideCart';
 import { useState } from 'react';
 import QuestionAnswer from './components/QuestionAnswer/QuestionAnswer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -41,6 +43,7 @@ const previousReadTime= JSON.parse(localStorage.getItem("readTime"));
       </div>
      </div>
      <QuestionAnswer></QuestionAnswer>
+     <ToastContainer></ToastContainer>
     </div>
   )
 }

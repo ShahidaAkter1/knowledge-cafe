@@ -1,14 +1,48 @@
 import React from 'react';
 import './SingleCard.css'
+import { ToastContainer, toast } from 'react-toastify';
 
 const SingleCard = (props) => {
     const {singleData,handleReadTime}= props;
   // console.log(props.singleData);
+
+  const {description}=props.singleData;
+  console.log(description);
+  
   // console.log(handleReadTime);
 
 // handle BookMark
-const handleBookMark = (name) =>{
-  console.log(name);
+const handleBookMark = (description
+  ) =>{
+    const previousBookmark= JSON.parse(localStorage.getItem("bookmark"));
+    // console.log(previousBookmark);
+    let bookmark = [];
+    const singleData={description,bookmark: true};
+  // console.log(singleData);
+ 
+  if(previousBookmark){
+    // console.log("ache");
+
+    const isSingleDataMarked= previousBookmark.find(single => single.description ==description);
+    // console.log(isSingleDataMarked);
+
+    if(isSingleDataMarked){
+      // alert("already bookmark");
+      toast(" wow already Bookmarked!");
+    }
+    else{
+      bookmark.push(...previousBookmark, singleData);
+      // console.log(bookmark);
+      localStorage.setItem("bookmark", JSON.stringify(bookmark))
+    }
+
+
+  }
+  else{
+    // console.log("nai");
+    bookmark.push(singleData);
+    localStorage.setItem("bookmark", JSON.stringify(bookmark));
+  }
 }
   
 
@@ -32,7 +66,7 @@ const handleBookMark = (name) =>{
          <p> <span>{singleData.readTime}</span> min read</p>
          </div>
          <div>
-         <svg onClick={()=> handleBookMark({singleData})} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 iconBookmark">
+         <svg onClick={()=> handleBookMark(description)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 iconBookmark">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
         </svg>
       </div>
