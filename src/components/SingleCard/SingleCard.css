@@ -8,3 +8,7 @@
     text-decoration: underline;
     color: blue;
 }
+.card-container{
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}

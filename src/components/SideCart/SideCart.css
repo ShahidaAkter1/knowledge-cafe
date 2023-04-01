@@ -1,12 +1,21 @@
 .spentTime{
-    background-color: beige;
+    background-color: rgb(239, 214, 247);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: blue;
+    font-size: 30px;
 
 }
 .bookMark{
-background-color: beige;
+background-color: rgb(224, 217, 233);
+padding: 10px;
+margin-top: 20px;
+border-radius: 10px;
+border: 1px solid black;
 }
 .cart {
     position: sticky;
-    top: 0;
-   
-  }
+    top: 0; 
+}
