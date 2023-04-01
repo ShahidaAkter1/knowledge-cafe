@@ -12,6 +12,7 @@ const SideCart = (props) => {
        if(previousSpentTime===null){
         setTimeSpent(0);
        }
+    
        else{
         setTimeSpent(previousSpentTime);
        }
