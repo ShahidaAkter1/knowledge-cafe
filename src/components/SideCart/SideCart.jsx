@@ -12,7 +12,6 @@ const SideCart = (props) => {
        if(previousSpentTime===null){
         setTimeSpent(0);
        }
-    
        else{
         setTimeSpent(previousSpentTime);
        }
@@ -45,18 +44,6 @@ const SideCart = (props) => {
      len=book.length;
     
      
-
-
-//   console.log(props.bookmarked);
-// const len=props.bookmarked.length;
-const len=0;
-
-
-
-
-  
-
-
 
     return (
         <div className='cart'>
